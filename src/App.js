@@ -71,7 +71,7 @@ function reducer(state, { type, payload }) {
       }
       if (state.currentOperand == null) return state
       if (state.currentOperand.length === 1) {
-        return { ...state, currentOperand: null }
+        return { ...state, currentOperand:null}
       }
 
       return {
@@ -130,7 +130,7 @@ function formatOperand(operand) {
   return `${INTEGER_FORMATTER.format(integer)}.${decimal}`
 }
 
-function App() {
+export default function App() {
   const [{ currentOperand, previousOperand, operation }, dispatch] = useReducer(
     reducer,
     {}
@@ -178,4 +178,4 @@ function App() {
   )
 }
 
-export default App
+
